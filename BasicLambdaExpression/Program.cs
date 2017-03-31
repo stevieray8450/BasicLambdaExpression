@@ -16,6 +16,7 @@ namespace BasicLambdaExpression
 
 		// the delegate has to be passed in as a parameter.
 		// this delegate will point to a function
+
 		public static void PromoteEmployee(List<Employee> employeeList, isPromotable isEligibleToPromote)
 		{
 			foreach (Employee emp in employeeList)
@@ -46,22 +47,6 @@ namespace BasicLambdaExpression
 			empList.Add(new Employee() { ID = 103, Name = "Kim", gender = Gender.Female, Experience = 7 });
 
 			Employee.PromoteEmployee(empList, emp => emp.Experience >= 5);
-		}
-
-		// this method returns a boolean
-		// note that the signatures of this method and the delegate (at the top of this code)
-		// are the same
-		// note, also, that it takes in an Employee object
-		public static bool Promote(Employee emp)
-		{
-			if (emp.Experience >= 5)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
 		}
 	}
 }
